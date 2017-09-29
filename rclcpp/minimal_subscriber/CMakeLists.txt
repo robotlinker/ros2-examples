@@ -23,10 +23,14 @@ ament_target_dependencies(subscriber_member_function rclcpp std_msgs)
 add_executable(subscriber_not_composable not_composable.cpp)
 ament_target_dependencies(subscriber_not_composable rclcpp std_msgs)
 
+add_executable(bugged_listener_example bugged_listener_example.cpp)
+ament_target_dependencies(bugged_listener_example rclcpp std_msgs)
+
 install(TARGETS
   subscriber_lambda
   subscriber_member_function
   subscriber_not_composable
+  bugged_listener_example
   DESTINATION lib/${PROJECT_NAME})
 
 ament_package()

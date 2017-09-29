@@ -23,10 +23,14 @@ ament_target_dependencies(publisher_member_function rclcpp std_msgs)
 add_executable(publisher_not_composable not_composable.cpp)
 ament_target_dependencies(publisher_not_composable rclcpp std_msgs)
 
+add_executable(bugged_talker_example bugged_talker_example.cpp)
+ament_target_dependencies(bugged_talker_example rclcpp std_msgs)
+
 install(TARGETS
   publisher_lambda
   publisher_member_function
   publisher_not_composable
+  bugged_talker_example
   DESTINATION lib/${PROJECT_NAME}
 )
 
